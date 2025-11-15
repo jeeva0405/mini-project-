@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌳 Dynamic Tree Plantation Carbon Reduction Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="leaf-container" id="leafContainer"></div>
+    
+    <div class="container">
+        <header class="header">
+            <h1 class="header-title">🌳 Dynamic Tree Plantation Carbon Reduction Calculator</h1>
+            <p class="header-description">Calculate how much CO₂ your trees can absorb and find the best one to plant!</p>
+        </header>
+
+        <main class="main-content">
+            <section class="form-section glass-card">
+                <h2 class="section-title">Select Your Trees</h2>
+                <form id="calculatorForm" class="calculator-form">
+                    <div class="form-group">
+                        <label for="treeType" class="form-label">Tree Type</label>
+                        <select id="treeType" class="form-select" required>
+                            <option value="">Choose a tree type...</option>
+                            <option value="neem">Neem</option>
+                            <option value="mango">Mango</option>
+                            <option value="teak">Teak</option>
+                            <option value="banyan">Banyan</option>
+                            <option value="coconut">Coconut</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="treeCount" class="form-label">Number of Trees</label>
+                        <input 
+                            type="number" 
+                            id="treeCount" 
+                            class="form-input" 
+                            min="1" 
+                            placeholder="Enter number of trees"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="btn-calculate">
+                        <span>Calculate CO₂ Absorption</span>
+                        <span class="btn-icon">🌿</span>
+                    </button>
+                </form>
+            </section>
+
+            <section id="resultsSection" class="results-section hidden">
+                <div class="results-card glass-card">
+                    <h2 class="section-title">Your Carbon Impact</h2>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-icon">📊</div>
+                            <div class="result-content">
+                                <span class="result-label">CO₂ Absorbed Per Year</span>
+                                <span class="result-value" id="yearlyCO2">0 kg</span>
+                            </div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon">🌍</div>
+                            <div class="result-content">
+                                <span class="result-label">CO₂ Absorbed in 10 Years</span>
+                                <span class="result-value" id="tenYearCO2">0 kg</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tree-info">
+                        <p class="tree-selected">Tree Type: <strong id="selectedTree">-</strong></p>
+                        <p class="tree-count">Trees Planted: <strong id="selectedCount">-</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recommendation-section">
+                <h2 class="section-title">🌿 Best Tree Recommendation</h2>
+                <div class="recommendation-card glass-card highlight-card" id="recommendationCard">
+                    <div class="recommendation-header">
+                        <div class="tree-emoji" id="recommendationEmoji">🌳</div>
+                        <h3 class="recommendation-title" id="recommendationTitle">Compare all trees to see the best option!</h3>
+                    </div>
+                    <div class="recommendation-details">
+                        <p class="recommendation-text" id="recommendationText">
+                            Select a tree type and calculate to see recommendations based on CO₂ absorption rates.
+                        </p>
+                        <div class="recommendation-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">CO₂ Absorption Rate</span>
+                                <span class="stat-value" id="recommendationRate">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p class="footer-text">Let's make Earth greener 🌍</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
